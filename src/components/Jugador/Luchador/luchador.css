@@ -1,0 +1,14 @@
+  .luchador {
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 90%;
+  }
+  
+  .imagenDiv {
+    width: 50%;
+    border-radius: 8px;
+  }
+  
+  

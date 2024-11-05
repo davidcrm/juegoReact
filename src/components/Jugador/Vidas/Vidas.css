@@ -1,0 +1,12 @@
+.vidasDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .vida {
+    width: 70px;
+    height: 70px;
+    justify-content: space-between;
+    margin: 15px;
+  }
