@@ -1,77 +1,65 @@
-import './App.css'
-import Luchador from './components/Jugador/Luchador/Luchador'
-import Encabezado from './components/Elementos/Encabezado'
-import ComenzarBoton from './components/Buttons/ComenzarBoton'
-import ResolucionBoton from './components/Buttons/ResolucionBoton'
-import NuevaPartidaBoton from './components/Buttons/NuevaPartidaBoton'
-import { useState } from 'react'
-import Vidas from './components/Jugador/Vidas/Vidas'
-import Habilidades from './components/Jugador/Habilidades/Habilidades'
+import './App.css';
+import Luchador from './components/Jugador/Luchador/Luchador';
+import Encabezado from './components/Elementos/Encabezado';
+import Boton from './components/Boton/Boton';
+import { useState } from 'react';
+import Vidas from './components/Jugador/Vidas/Vidas';
+import Habilidades from './components/Jugador/Habilidades/Habilidades';
 
 function App() {
-  const [modalidad, setModalidad] = useState('')
-{/*
   const [juego, setJuego] = useState({
-    juegador1: null
-  })
+    jugador1: null,
+    modalidad: ''
+  });
 
-  juego.juegador1
+  const Comienzo = () => {
+    const modalidades = ["Destreza", "Fuerza", "Suerte"];
+    const numero = Math.floor(Math.random() * modalidades.length);
 
-  setJuego({
-    ...juego,
-    juegador1:
-  })
-*/}
-  const manejarComienzo = () => {
-    const modalidades = ["Destreza", "Fuerza", "Suerte"]
-    const numero = Math.floor(Math.random() * 3);
-    setModalidad(modalidades[numero])
-    
-  }
+    setJuego(juego => ({
+      ...juego,
+      modalidad: modalidades[numero]
+    }));
+  };
 
   return (
     <>
-    <div>
-    <Encabezado
-    modalidad={modalidad}
-    />
-      <div className='container'>
+      <div>
+        
+        <Encabezado modalidad={juego.modalidad} />
+        
+        <div className="container">
           <div>
-          <Luchador
-            nombre="Peleador 1"
-            rutaImagen="/luchador1.png"
-          />
-          <Vidas
-            destreza= {125}
-            fuerza = {100}
-            suerte = {90}
-          />
-          <Habilidades
-          />
+            <Luchador 
+            nombre="Peleador 1" 
+            rutaImagen="/luchador1.png" />
+            <Vidas/>
+            <Habilidades
+              destreza={125}
+              fuerza={100}
+              suerte={90}
+            />
+          </div>
+          <div>
+            <Luchador 
+            nombre="Luchador 2" 
+            rutaImagen="/luchador2.png" 
+            />
+            <Vidas/>
+            <Habilidades
+              destreza={100}
+              fuerza={150}
+              suerte={124}
+            />
+          </div>
         </div>
-        <div>
-          <Luchador
-            nombre="Luchador 2"
-            rutaImagen="/luchador2.png"
-          />
-          <Vidas/>
-          <Habilidades
-            destreza={100}
-            fuerza={150}
-            suerte={124}
-          />
-        </div>
-        </div>
-        <div className='container-buttons'>
-          <ComenzarBoton
-          onComenzar={manejarComienzo}
-          />
-          <ResolucionBoton/>
-          <NuevaPartidaBoton/>
+
+        <div className="container-buttons">
+          <Boton onClick={Comienzo} texto="COMENZAR" />
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
