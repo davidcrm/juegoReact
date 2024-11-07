@@ -1,9 +1,26 @@
 .habilidadesDiv {
     margin-top: 10px;
+    border: 2px solid limegreen;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    margin-left: 22%;
+    margin-bottom: 10px;
 }
+.habilidadesDiv ul {
+    list-style-type: none; 
+  }
 
-.texto{
-    color: black;
-    font-size: medium;
+.textoHabilidades{
+    color: white;
+    font-size: x-large;
     font-weight: bold;
+    font-family: fantasy;
+}
+.valorHabilidad{
+    font-size: xx-large;
+    color: lime;
+    font-weight: bold;
+    margin-left: 25%;
 }

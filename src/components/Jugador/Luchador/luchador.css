@@ -1,14 +1,36 @@
-  .luchador {
-    border: 2px solid red;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 90%;
-  }
-  
-  .imagenDiv {
-    width: 50%;
-    border-radius: 8px;
-  }
+.luchador {
+  border: 2px solid red;
+  padding: 0;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: fit-content;
+}
+.texto{
+  font-size: large;
+  font-weight: bold;
+  color: honeydew;
+}
+.imagenDiv {
+  width: 50%;
+  border-radius: 8px;
+}
+.dado{
+  height: 10%;
+  width: 10%;
+}
+.dado-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 580px;
+  max-height: 70px;
+  padding: 0;
+}
+.numero-aleatorio{
+  font-family: fantasy;
+  font-size: 40px;
+  color: lime;
+  font-weight: bold;
+}
   
   

@@ -1,13 +1,20 @@
 import React from 'react'
 import "./Habilidades.css"
 
-export default function Habilidades(destreza, fuerza, suerte) {
-  const habilidades = [destreza, fuerza, suerte]
+export default function Habilidades({destreza, fuerza, suerte}) {
   return (
     <div className='habilidadesDiv'>
-      <p className='texto'>Destreza: {habilidades.destreza}</p>
-      <p className='texto'>Fuerza: {habilidades.fuerza}</p>
-      <p className='texto'>Suerte: {habilidades.suerte}</p>
+      <ul>
+        <li className='textoHabilidades'>
+          Destreza:  <span className='valorHabilidad'>{destreza}</span>
+        </li>
+        <li className='textoHabilidades'>
+          Fuerza: <span className='valorHabilidad'>{fuerza}</span>
+        </li>
+        <li className='textoHabilidades'>
+          Suerte: <span className='valorHabilidad'>{suerte}</span>
+        </li>
+      </ul>
     </div>
     
   )

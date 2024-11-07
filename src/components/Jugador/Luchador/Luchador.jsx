@@ -5,9 +5,16 @@ function Luchador({nombre, rutaImagen}){
   
 
   return(
+    <div>
+      <div className='dado-container'>
+      <img src="/dado.png" className='dado' />
+      <p className='numero-aleatorio'>000</p>
+      </div>
     <div className='luchador'>
-    <h3>{nombre}</h3>
-    <img src={rutaImagen} className='imagenDiv'/>
+      <h3 className='texto'>{nombre}</h3>
+      <img src={rutaImagen} className='imagenDiv'/>
+    
+    </div>
     </div>
   )
 }

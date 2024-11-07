@@ -6,6 +6,8 @@ import { useState } from 'react';
 import Vidas from './components/Jugador/Vidas/Vidas';
 import Habilidades from './components/Jugador/Habilidades/Habilidades';
 
+const modalidades = ["Destreza", "Fuerza", "Suerte"];
+
 function App() {
   const [juego, setJuego] = useState({
     jugador1: null,
@@ -13,7 +15,6 @@ function App() {
   });
 
   const Comienzo = () => {
-    const modalidades = ["Destreza", "Fuerza", "Suerte"];
     const numero = Math.floor(Math.random() * modalidades.length);
 
     setJuego(juego => ({
@@ -21,6 +22,16 @@ function App() {
       modalidad: modalidades[numero]
     }));
   };
+  const Resolucion = () => {
+    {/*const valor1 = Math.floor(Math.random() * 100 -1)
+    const valor2 = Math.floor(Math.random() * 100 -1)
+    if (juego.modalidad === "Destreza"){
+
+    }*/}
+  }
+  const NuevaPartida = () => {
+
+  }
 
   return (
     <>
@@ -31,7 +42,7 @@ function App() {
         <div className="container">
           <div>
             <Luchador 
-            nombre="Peleador 1" 
+            nombre="Luchador 1" 
             rutaImagen="/luchador1.png" />
             <Vidas/>
             <Habilidades
@@ -55,7 +66,9 @@ function App() {
         </div>
 
         <div className="container-buttons">
-          <Boton onClick={Comienzo} texto="COMENZAR" />
+          <Boton onClick={Comienzo} texto="COMENZAR" color="cyan" />
+          <Boton onClick={Resolucion} texto="RESOLUCIÓN" color="dodgerblue"/>
+          <Boton onClick={NuevaPartida} texto="NUEVA PARTIDA" color="blue"/>
         </div>
       </div>
     </>
