@@ -52,32 +52,12 @@ function App() {
     juego.jugador1.valor = Math.floor(Math.random() * 100)
     juego.jugador2.valor = Math.floor(Math.random() * 100)
 
-    const habilidadJ1 = juego.jugador1.habilidades[juego.modalidad] + jugador1.valor
-    const habilidadJ2 = juego.jugador2.habilidades[juego.modalidad] + jugador2.valor
-
-    if (juego.modalidad === "Destreza"){
-      if (comparar(habilidadJ1, habilidadJ2)){
-        juego.jugador2.vidas -= 1
-      }
-      else if (comparar(habilidadJ2, habilidadJ1)){
-        juego.jugador1.vidas -= 1
-      }
-    }else if (juego.modalidad === "Fuerza"){
-      if (comparar(habilidadJ1, habilidadJ2)){
-        juego.jugador2.vidas -= 1
-      }
-      else if (comparar(habilidadJ2, habilidadJ1)){
-        juego.jugador1.vidas -= 1
-      }
-    }
-    else if (juego.modalidad === "Suerte"){
-      if (comparar(habilidadJ1, habilidadJ2)){
-        juego.jugador2.vidas -= 1
-      }
-      else if (comparar(habilidadJ2, habilidadJ1)){
-        juego.jugador1.vidas -= 1
-      }
-    }
+    juego.jugador1.habilidades[juego.modalidad] + jugador1.valor
+    juego.jugador2.habilidades[juego.modalidad] + jugador2.valor
+    
+    setJuego(juego => ({
+      ...juego
+    }))
 
     /*if (jugador1.vidas === 0){
       setGanador(jugador2)
@@ -86,12 +66,7 @@ function App() {
       setGanador(jugador1)
     }*/
 
-    /*Actualizar estado del juego */
-    setJuego({
-      ...juego,
-      jugador1,
-      jugador2,
-    })
+
   }
   const NuevaPartida = () => {
     setJuego({
