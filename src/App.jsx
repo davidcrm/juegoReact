@@ -4,11 +4,8 @@ import Encabezado from './components/Elementos/Encabezado'
 import Boton from './components/Boton/Boton'
 import { useState } from 'react'
 
-const modalidades = ["Destreza", "Fuerza", "Suerte"]
+const modalidades = ["destreza", "fuerza", "suerte"]
 
-function comparar(num1, num2){
-  return num1 >num2
-}
 
 function App() {
   const [juego, setJuego] = useState({
@@ -34,7 +31,7 @@ function App() {
       },
       valor: 0,
     },
-    modalidad: '',
+    modalidad: ''
   })
   
 
@@ -49,25 +46,52 @@ function App() {
   }
   const Resolucion = () => {
 
-    juego.jugador1.valor = Math.floor(Math.random() * 100)
-    juego.jugador2.valor = Math.floor(Math.random() * 100)
+    const valorJugador1 = Math.floor(Math.random() * 101)
+    const valorJugador2 = Math.floor(Math.random() * 101)
 
-    juego.jugador1.habilidades[juego.modalidad] + jugador1.valor
-    juego.jugador2.habilidades[juego.modalidad] + jugador2.valor
-    
-    setJuego(juego => ({
-      ...juego
-    }))
+    const modalidad = juego.modalidad
 
-    /*if (jugador1.vidas === 0){
-      setGanador(jugador2)
+    const sumaJugador1 = juego.jugador1.habilidades[modalidad] + valorJugador1
+    const sumaJugador2 = juego.jugador2.habilidades[modalidad] + valorJugador2
+
+    let vidasActualizadas1 = juego.jugador1.vidas
+    let vidasactualizadas2 = juego.jugador2.vidas
+
+
+    if (sumaJugador1 > sumaJugador2){
+        vidasactualizadas2 -= 1
     }
-    else{
-      setGanador(jugador1)
-    }*/
+    if ( sumaJugador1 < sumaJugador2){
+      vidasActualizadas1 -= 1
+    }
+    
 
-
+    setJuego(prevJuego => {
+      const nuevoJuego = {
+        ...prevJuego,
+        jugador1: {
+          ...prevJuego.jugador1,
+          valor: valorJugador1,
+          habilidades: {
+            ...prevJuego.jugador1.habilidades,
+            [modalidad]: prevJuego.jugador1.habilidades[modalidad] + valorJugador1
+          },
+          vidas: vidasActualizadas1
+        },
+        jugador2: {
+          ...prevJuego.jugador2,
+          valor: valorJugador2,
+          habilidades: {
+            ...prevJuego.jugador2.habilidades,
+            [modalidad]: prevJuego.jugador2.habilidades[modalidad] + valorJugador2
+          },
+          vidas: vidasactualizadas2
+        }
+      };
+      return nuevoJuego;
+    });
   }
+  
   const NuevaPartida = () => {
     setJuego({
       jugador1: {
@@ -102,10 +126,10 @@ function App() {
         <Encabezado modalidad={juego.modalidad} />
         <div className="container">
           <div>
-            <Luchador jugador={juego.jugador1} valor={juego.jugador1.valor}/> 
+            <Luchador jugador={juego.jugador1} valor={juego.jugador1.valor} habilidades={juego.jugador1.habilidades}/> 
           </div>
           <div>
-          <Luchador jugador={juego.jugador2} valor={juego.jugador2.valor} />
+          <Luchador jugador={juego.jugador2} valor={juego.jugador2.valor} habilidades={juego.jugador2.habilidades} />
           </div>
         </div>
         <div className="container-buttons">

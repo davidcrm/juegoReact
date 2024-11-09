@@ -16,6 +16,5 @@ export default function Habilidades({ habilidades }) {
         </li>
       </ul>
     </div>
-    
   )
 }

@@ -3,8 +3,7 @@ import "./luchador.css"
 import Habilidades from '../Habilidades/Habilidades';
 import Vidas from '../Vidas/Vidas';
 
-function Luchador({ jugador, valor }){
-  
+function Luchador({ jugador, valor, habilidades}){
   return(
     <div>
       <div className='dado-container'>
@@ -16,7 +15,7 @@ function Luchador({ jugador, valor }){
       <img src={jugador.rutaImagen} className='imagenDiv'/>
     </div>
     <Vidas vidas={jugador.vidas} />
-    <Habilidades habilidades={jugador.habilidades} />
+    <Habilidades habilidades={habilidades} />
     </div>
   )
 }
