@@ -1,11 +1,11 @@
 .button-container {
   display: inline;
-  margin-top: 20%;
-  margin-left: 20px;
+  margin-top: 30%;
+  margin-left: 15px;
 }
 .custom-button-com {
   display: inline-flex;
-  font-family: 'Verdana', sans-serif;
+  font-family: fantasy;
   font-size: 18px;
   color: currentColor;
   background-color: transparent;
@@ -19,12 +19,12 @@
 
 .custom-button-com:hover {
   transform: scale(1.05);
-  box-shadow: 2px 2px 15px currentColor;
+  box-shadow: 2px 2px 15px black;
 }
 
 .custom-button-com:active {
   transform: scale(0.95);
-  box-shadow: 1px 1px 5px currentColor;
+  box-shadow: 1px 1px 5px black ;
 }
 
   

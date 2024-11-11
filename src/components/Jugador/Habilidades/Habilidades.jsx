@@ -2,6 +2,7 @@ import React from 'react'
 import "./Habilidades.css"
 
 export default function Habilidades({ habilidades }) {
+  // Devuelve una lista con las habilidades del jugador que recibe por parámetro y la muestra
   return (
     <div className='habilidadesDiv'>
       <ul>

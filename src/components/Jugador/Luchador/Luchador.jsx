@@ -3,19 +3,35 @@ import "./luchador.css"
 import Habilidades from '../Habilidades/Habilidades';
 import Vidas from '../Vidas/Vidas';
 
-function Luchador({ jugador, valor, habilidades}){
+// Componente luchador que recibe por parametro un objeto luchador, el valor aleatorio y las habilidades que tiene
+function Luchador({ jugador, valor, habilidades, info = true }){
   return(
-    <div>
+    // Comprueba si el parámetro info es true y modifica el estilo del div
+    <div style={{ marginBottom: info ? '' : '20px' }}>
       <div className='dado-container'>
-      <img src="/dado.png" className='dado' />
-      <p className='numero-aleatorio'>{valor}</p>
+        {// Imagen del dado y texto con el valor aleatorio 
+        }
+        {info && (
+          <>
+            <img src="/dado.png" className='dado' />
+            <p className='numero-aleatorio'>{valor}</p>
+          </>  
+        )}
       </div>
+      {// Imagen y nombre del luchador
+      }
     <div className='luchador'>
       <h3 className='texto'>{jugador.nombre}</h3>
       <img src={jugador.rutaImagen} className='imagenDiv'/>
     </div>
-    <Vidas vidas={jugador.vidas} />
-    <Habilidades habilidades={habilidades} />
+    {// Llamada a componentes Vidas y
+    }
+    {info && (
+      <>
+        <Vidas vidas={jugador.vidas} />
+        <Habilidades habilidades={habilidades} />
+      </>
+    )}
     </div>
   )
 }

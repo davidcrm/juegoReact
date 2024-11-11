@@ -1,12 +1,12 @@
 .habilidadesDiv {
     margin-top: 10px;
-    border: 2px solid limegreen;
+    border: 2px solid orange;
     padding: 10px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     width: 50%;
     margin-left: 22%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .habilidadesDiv ul {
     list-style-type: none; 

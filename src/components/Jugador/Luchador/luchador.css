@@ -1,20 +1,23 @@
 .luchador {
   border: 2px solid red;
-  padding: 0;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  width: fit-content;
+  width: 80%;
+  margin-left: 8%;
 }
 .texto{
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
   color: honeydew;
+  font-family: fantasy;
 }
 .imagenDiv {
-  width: 50%;
-  border-radius: 8px;
+  width: 60%;
+  border-radius: 10px;
+  margin-bottom: 5%;
 }
 .dado{
+  margin-right: 10px;
   height: 10%;
   width: 10%;
 }
@@ -24,7 +27,6 @@
   justify-content: center;
   max-width: 580px;
   max-height: 70px;
-  padding: 0;
 }
 .numero-aleatorio{
   font-family: fantasy;
