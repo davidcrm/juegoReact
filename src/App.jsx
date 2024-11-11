@@ -1,6 +1,6 @@
 import './App.css'
 import Luchador from './components/Jugador/Luchador/Luchador'
-import Encabezado from './components/Elementos/Encabezado'
+import Encabezado from './components/Elementos/Encabezado/Encabezado'
 import Boton from './components/Elementos/Boton/Boton'
 import { useState } from 'react'
 
@@ -44,7 +44,6 @@ function App() {
       ...juego,
       modalidad: modalidades[numero],
     }))
-    
   }
   // Función flecha para cada ronda
   const Resolucion = () => {

@@ -8,7 +8,7 @@ export default function Encabezado({ modalidad, ganador }) {
       {
         // comprueba que se recibe el parámetro ganador y lo muestra:
         ganador ? (
-          <h1>Ganador: {ganador}</h1>
+          <h1>GANADOR: {ganador}</h1>
         ) : (
           // Y si no, muestra el encabezado por defecto
           <h1>LUCHA POR: {modalidad || 'Pulsa en comenzar'}</h1>
