@@ -10,7 +10,7 @@ function App() {
   // Establecer el estado inicial del juego y su estado
   const [juego, setJuego] = useState({
     jugador1: {
-      nombre: "Luchador 1",
+      nombre: "Gladiador Furioso",
       rutaImagen: "/luchador1.png",
       vidas: 3,
       habilidades: {
@@ -21,7 +21,7 @@ function App() {
       valor: 0,
     },
     jugador2: {
-      nombre: "Luchador 2",
+      nombre: "Gladiador Mago",
       rutaImagen: "/luchador2.png",
       vidas: 3,
       habilidades: {

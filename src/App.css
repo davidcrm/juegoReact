@@ -43,6 +43,7 @@
 body {
   background-image: url('fondo.png');
   background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
   font-family: 'Arial', sans-serif;
